@@ -150,5 +150,23 @@ namespace AjedrezWPF
                 }
             }
         }
+
+
+        //HACEMOS UN MÉTODO EL CÚAL NOS DEVUELVA EL COLOR DE LA PIEZA EN STRING
+        public string GetColor()
+        {
+            if (EsBlanca)
+            {
+                return "Blanca";
+            }
+            else if (EsNegra)
+            {
+                return "Negra";
+            }
+            else
+            {
+                return "Sin color";
+            }
+        }
     }
 }

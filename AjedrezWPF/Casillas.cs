@@ -17,6 +17,7 @@ namespace AjedrezWPF
         public Grid Tablero { get; set; }
         public String ColorFondo { get; set; }
         private static Casillas? casillaSeleccionada;
+        private static int? Turno = 1;
 
         public Casillas(int fila, int columna, Grid tablero) : base()
         {
@@ -72,6 +73,15 @@ namespace AjedrezWPF
                 if (HayPieza)
                 {
                     casillaSeleccionada = this;
+                    if (casillaSeleccionada.Pieza.GetColor().Equals("Blanca")  && Turno % 2 != 0)
+                    { }
+                    else if (casillaSeleccionada.Pieza.GetColor().Equals("Negra") && Turno % 2 == 0)
+                    { }
+                    else
+                    {
+                        MessageBox.Show("No puedes mover esta pieza");
+                        return; // Break the code execution here
+                    }
                     var posicion = GetPosicionCasillaEnTablero();
                     Casillas[,] tableroArray = new Casillas[8, 8];
 
@@ -107,9 +117,10 @@ namespace AjedrezWPF
                     // Mover la pieza a la nueva casilla
                     if (HayPieza)
                     {
-                        MessageBox.Show("Has comida: " + Pieza.Nombre);
+                        MessageBox.Show("Has comido: " + Pieza.Nombre);
                     }
                     AgregarPieza(casillaSeleccionada.Pieza);
+                    Turno++;
                     casillaSeleccionada.EliminarPieza();
                     casillaSeleccionada = null;
                     // Limpiar los fondos de las casillas
@@ -134,6 +145,8 @@ namespace AjedrezWPF
                     casillaSeleccionada = null;
                 }
             }
+
+            
         }
 
         public void EliminarPieza()
