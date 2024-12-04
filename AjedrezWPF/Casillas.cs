@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace AjedrezWPF
@@ -37,6 +38,8 @@ namespace AjedrezWPF
                 Background = Brushes.Black;
             }
         }
+
+        
 
         public void DefinirDimensiones(int ancho, int alto)
         {
@@ -102,6 +105,10 @@ namespace AjedrezWPF
                 if (Background == Brushes.Orange)
                 {
                     // Mover la pieza a la nueva casilla
+                    if (HayPieza)
+                    {
+                        MessageBox.Show("Has comida: " + Pieza.Nombre);
+                    }
                     AgregarPieza(casillaSeleccionada.Pieza);
                     casillaSeleccionada.EliminarPieza();
                     casillaSeleccionada = null;
