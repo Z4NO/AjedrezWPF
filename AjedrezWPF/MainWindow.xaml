@@ -11,20 +11,33 @@
         <Grid Margin="0,0,346,0" x:Name="GridTablero">
             <!-- Aquí se agregará el tablero de ajedrez -->
         </Grid>
-        <Rectangle HorizontalAlignment="Left" Height="80" Margin="650,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="304" />
+        <Label Content="Timer Blancas" HorizontalAlignment="Left" Margin="646,145,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label Content="Timer Blancas" HorizontalAlignment="Left" Margin="816,145,0,0" VerticalAlignment="Top" Width="174" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+
+
+        <Rectangle HorizontalAlignment="Left" Height="80" Margin="650,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="324" />
         <Label Content="Fichas Comidas Blancas" HorizontalAlignment="Left" Margin="646,244,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="PeonesBlancasLabel"   Content="Peones" HorizontalAlignment="Left" Margin="646,278,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="TorresBlancasLabel"   Content="Torres" HorizontalAlignment="Left" Margin="646,314,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="AlfilBlancasLabel"   Content="Alfis" HorizontalAlignment="Left" Margin="646,348,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="CaballoBlancasLabel"   Content="Caballos" HorizontalAlignment="Left" Margin="646,384,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label Content="Peones" HorizontalAlignment="Left" Margin="646,278,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="PeonesBlancasLabel"   Content="1" HorizontalAlignment="Left" Margin="735,278,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label Content="Torres" HorizontalAlignment="Left" Margin="646,314,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="TorresBlancasLabel"   Content="1" HorizontalAlignment="Left" Margin="735,314,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label  Content="Alfis" HorizontalAlignment="Left" Margin="646,348,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="AlfilBlancasLabel"   Content="1" HorizontalAlignment="Left" Margin="710,348,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label   Content="Caballos" HorizontalAlignment="Left" Margin="646,384,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="CaballoBlancasLabel"   Content="1" HorizontalAlignment="Left" Margin="750,384,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
 
         <Label Content="Fichas Comidas Negras" HorizontalAlignment="Left" Margin="646,428,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="PeonesLabel"   Content="Peones" HorizontalAlignment="Left" Margin="646,464,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="TorresLabel"   Content="Torres" HorizontalAlignment="Left" Margin="646,498,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="AlfilLabel"   Content="Alfis" HorizontalAlignment="Left" Margin="646,534,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Label x:Name="CaballoLabel"   Content="Caballos" HorizontalAlignment="Left" Margin="646,568,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
-        <Rectangle HorizontalAlignment="Left" Height="166" Margin="646,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
-        <Rectangle HorizontalAlignment="Left" Height="166" Margin="646,428,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
+        <Label    Content="Peones" HorizontalAlignment="Left" Margin="646,464,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="PeonesLabel"   Content="1" HorizontalAlignment="Left" Margin="735,464,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label   Content="Torres" HorizontalAlignment="Left" Margin="646,498,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="TorresLabel"   Content="1" HorizontalAlignment="Left" Margin="735,498,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label   Content="Alfis" HorizontalAlignment="Left" Margin="646,534,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="AlfilLabel"   Content="1" HorizontalAlignment="Left" Margin="710,534,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label  Content="Caballos" HorizontalAlignment="Left" Margin="646,568,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="CaballoLabel"   Content="1" HorizontalAlignment="Left" Margin="750,568,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+
+        <Rectangle HorizontalAlignment="Left" Height="166" Margin="646,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="328"/>
+        <Rectangle HorizontalAlignment="Left" Height="166" Margin="646,428,0,0" Stroke="Black" VerticalAlignment="Top" Width="328"/>
 
     </Grid>
 </Window>
