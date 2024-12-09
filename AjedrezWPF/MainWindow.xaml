@@ -5,10 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AjedrezWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="600">
-    <Grid>
-        
+        Title="MainWindow" Height="645" Width="1000">
+    <Grid Margin="0,0,0,0">
+        <Label x:Name="turnoLabel" Content="Turno: Blancas" HorizontalAlignment="Left" Margin="709,24,0,0" VerticalAlignment="Top" Width="213" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Grid Margin="0,0,346,0" x:Name="GridTablero">
+            <!-- Aquí se agregará el tablero de ajedrez -->
+        </Grid>
+        <Rectangle HorizontalAlignment="Left" Height="80" Margin="650,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="304" />
+        <Label Content="Fichas Comidas Blancas" HorizontalAlignment="Left" Margin="646,244,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="PeonesBlancasLabel"   Content="Peones" HorizontalAlignment="Left" Margin="646,278,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="TorresBlancasLabel"   Content="Torres" HorizontalAlignment="Left" Margin="646,314,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="AlfilBlancasLabel"   Content="Alfis" HorizontalAlignment="Left" Margin="646,348,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="CaballoBlancasLabel"   Content="Caballos" HorizontalAlignment="Left" Margin="646,384,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
 
+        <Label Content="Fichas Comidas Negras" HorizontalAlignment="Left" Margin="646,428,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="PeonesLabel"   Content="Peones" HorizontalAlignment="Left" Margin="646,464,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="TorresLabel"   Content="Torres" HorizontalAlignment="Left" Margin="646,498,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="AlfilLabel"   Content="Alfis" HorizontalAlignment="Left" Margin="646,534,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Label x:Name="CaballoLabel"   Content="Caballos" HorizontalAlignment="Left" Margin="646,568,0,0" VerticalAlignment="Top" Width="255" FontSize="16" FontWeight="Bold" FontFamily="Azonix" />
+        <Rectangle HorizontalAlignment="Left" Height="166" Margin="646,244,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
+        <Rectangle HorizontalAlignment="Left" Height="166" Margin="646,428,0,0" Stroke="Black" VerticalAlignment="Top" Width="308"/>
 
     </Grid>
 </Window>

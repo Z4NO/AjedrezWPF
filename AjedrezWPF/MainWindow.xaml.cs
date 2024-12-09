@@ -22,8 +22,22 @@ namespace AjedrezWPF
         public MainWindow()
         {
             InitializeComponent();
+
+            // Ajustamos el ancho del tablero a 600 de anchura y 600 de altura
+            tableroGrid.Width = 630;
+            tableroGrid.Height = 600;
+            // Ajustamos el tablero para que aparezca a la izquierda de la ventana principal
+            tableroGrid.HorizontalAlignment = HorizontalAlignment.Left;
+
             GenerarTablero();
             this.ResizeMode = ResizeMode.NoResize;
+            turnoLabel.Visibility = Visibility.Visible;
+            turnoLabel.Foreground = Brushes.Black;
+            turnoLabel.FontSize = 20;
+            turnoLabel.Content = "Turno: Blancas";
+
+            // Agregar el tablero al Grid secundario (GridTablero)
+            GridTablero.Children.Add(tableroGrid);
         }
 
         private void GenerarTablero()
@@ -40,7 +54,7 @@ namespace AjedrezWPF
             {
                 for (int columna = 0; columna < columnas; columna++)
                 {
-                    var casilla = new Casillas(fila, columna, tableroGrid);
+                    var casilla = new Casillas(fila, columna, tableroGrid, turnoLabel);
                     tablero[fila, columna] = casilla;
 
                     // Suscribirse al evento Click
@@ -65,20 +79,18 @@ namespace AjedrezWPF
 
             for (int columna = 0; columna < columnas; columna++)
             {
-               tablero[1, columna].AgregarPieza(new Pieza(true, false, "Peón")); // PEÓN blanco
-               tablero[6, columna].AgregarPieza(new Pieza(false, true, "Peón")); // PEON NEGRO
+                tablero[1, columna].AgregarPieza(new Pieza(true, false, "Peón")); // PEÓN blanco
+                tablero[6, columna].AgregarPieza(new Pieza(false, true, "Peón")); // PEÓN negro
             }
 
             tablero[7, 0].AgregarPieza(new Pieza(false, true, "Torre"));
             tablero[7, 1].AgregarPieza(new Pieza(false, true, "Caballo"));
             tablero[7, 2].AgregarPieza(new Pieza(false, true, "Alfil"));
             tablero[7, 3].AgregarPieza(new Pieza(false, true, "Reina")); // REINA
-            tablero[7, 4].AgregarPieza(new Pieza(false, true, "Rey"));  // REI
+            tablero[7, 4].AgregarPieza(new Pieza(false, true, "Rey"));  // REY
             tablero[7, 5].AgregarPieza(new Pieza(false, true, "Alfil"));
             tablero[7, 6].AgregarPieza(new Pieza(false, true, "Caballo"));
             tablero[7, 7].AgregarPieza(new Pieza(false, true, "Torre"));
-
-            this.Content = tableroGrid; // Agregar el tablero a la ventana
         }
     }
 }

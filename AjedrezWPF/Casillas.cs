@@ -18,14 +18,18 @@ namespace AjedrezWPF
         public String ColorFondo { get; set; }
         private static Casillas? casillaSeleccionada;
         private static int? Turno = 1;
+        private static Label? Turno_labels;
 
-        public Casillas(int fila, int columna, Grid tablero) : base()
+        public Casillas(int fila, int columna, Grid tablero, Label turno_labels) : base()
         {
             EsBlanca = (fila + columna) % 2 == 0;
             EsNegra = !EsBlanca;
             PintarCasilla();
             Tablero = tablero;
             ColorFondo = Background.ToString();
+            Turno_labels = turno_labels;
+            
+
         }
 
         public void PintarCasilla()
@@ -74,13 +78,13 @@ namespace AjedrezWPF
                 {
                     casillaSeleccionada = this;
                     if (casillaSeleccionada.Pieza.GetColor().Equals("Blanca")  && Turno % 2 != 0)
-                    { }
+                    {}
                     else if (casillaSeleccionada.Pieza.GetColor().Equals("Negra") && Turno % 2 == 0)
-                    { }
+                    {}
                     else
                     {
                         MessageBox.Show("No puedes mover esta pieza");
-                        return; // Break the code execution here
+                        return; 
                     }
                     var posicion = GetPosicionCasillaEnTablero();
                     Casillas[,] tableroArray = new Casillas[8, 8];
@@ -121,6 +125,11 @@ namespace AjedrezWPF
                     }
                     AgregarPieza(casillaSeleccionada.Pieza);
                     Turno++;
+                    if (Turno_labels != null)
+                    {
+                        Turno_labels.Content = Turno % 2 == 0 ? "Turno: Negras" : "Turno: Blancas";
+                    }
+
                     casillaSeleccionada.EliminarPieza();
                     casillaSeleccionada = null;
                     // Limpiar los fondos de las casillas
