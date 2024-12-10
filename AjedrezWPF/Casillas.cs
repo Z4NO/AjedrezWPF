@@ -19,8 +19,12 @@ namespace AjedrezWPF
         private static Casillas? casillaSeleccionada;
         private static int? Turno = 1;
         private static Label? Turno_labels;
+        private static Label? peonesBlancasLabel;
+        private static Label? torresBlancasLabel;
+        private static Label? alfilsBlancasLabel;
+        private static Label? caballosBlancasLabel;
 
-        public Casillas(int fila, int columna, Grid tablero, Label turno_labels) : base()
+        public Casillas(int fila, int columna, Grid tablero, Label turno_labels, Label PeonesBlancasLabel, Label TorresBlancasLabel, Label AlfilsBlancasLabel, Label CaballosBlancasLabel) : base()
         {
             EsBlanca = (fila + columna) % 2 == 0;
             EsNegra = !EsBlanca;
@@ -28,7 +32,11 @@ namespace AjedrezWPF
             Tablero = tablero;
             ColorFondo = Background.ToString();
             Turno_labels = turno_labels;
-            
+            peonesBlancasLabel = PeonesBlancasLabel;
+            torresBlancasLabel = TorresBlancasLabel;
+            alfilsBlancasLabel = AlfilsBlancasLabel;
+            caballosBlancasLabel = CaballosBlancasLabel;
+
 
         }
 
@@ -122,6 +130,7 @@ namespace AjedrezWPF
                     if (HayPieza)
                     {
                         MessageBox.Show("Has comido: " + Pieza.Nombre);
+                        ModicarLabelsPieza();
                     }
                     AgregarPieza(casillaSeleccionada.Pieza);
                     Turno++;
@@ -129,6 +138,7 @@ namespace AjedrezWPF
                     {
                         Turno_labels.Content = Turno % 2 == 0 ? "Turno: Negras" : "Turno: Blancas";
                     }
+                    
 
                     casillaSeleccionada.EliminarPieza();
                     casillaSeleccionada = null;
@@ -156,6 +166,26 @@ namespace AjedrezWPF
             }
 
             
+        }
+
+        //Vamos a definir el método para modifcar los contadores de los labels de las piezas comidas para cada color 
+        public void ModicarLabelsPieza()
+        {
+            switch (Pieza.Nombre)
+            {
+                case "Peón":
+                    peonesBlancasLabel.Content = (Convert.ToInt32(peonesBlancasLabel.Content) + 1).ToString();
+                    break;
+                case "Torre":
+                    torresBlancasLabel.Content = Convert.ToInt32(torresBlancasLabel.Content) + 1;
+                    break;
+                case "Alfil":
+                    alfilsBlancasLabel.Content = Convert.ToInt32(alfilsBlancasLabel.Content) + 1;
+                    break;
+                case "Caballo":
+                    caballosBlancasLabel.Content = Convert.ToInt32(caballosBlancasLabel.Content) + 1;
+                    break;
+            }
         }
 
         public void EliminarPieza()

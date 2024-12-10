@@ -54,7 +54,7 @@ namespace AjedrezWPF
             {
                 for (int columna = 0; columna < columnas; columna++)
                 {
-                    var casilla = new Casillas(fila, columna, tableroGrid, turnoLabel);
+                    var casilla = new Casillas(fila, columna, tableroGrid, turnoLabel, PeonesBlancasLabel, TorresBlancasLabel, AlfilBlancasLabel, CaballoBlancasLabel);
                     tablero[fila, columna] = casilla;
 
                     // Suscribirse al evento Click
