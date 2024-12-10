@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace AjedrezWPF
 {
@@ -23,8 +24,13 @@ namespace AjedrezWPF
         private static Label? torresBlancasLabel;
         private static Label? alfilsBlancasLabel;
         private static Label? caballosBlancasLabel;
+        private static Label? peonesNegrasLabel;
+        private static Label? torresNegrasLabel;
+        private static Label? alfilsNegrasLabel;
+        private static Label? caballosNegrasLabel;
 
-        public Casillas(int fila, int columna, Grid tablero, Label turno_labels, Label PeonesBlancasLabel, Label TorresBlancasLabel, Label AlfilsBlancasLabel, Label CaballosBlancasLabel) : base()
+
+        public Casillas(int fila, int columna, Grid tablero, Label turno_labels, Label PeonesBlancasLabel, Label TorresBlancasLabel, Label AlfilsBlancasLabel, Label CaballosBlancasLabel, Label PeonesNegrasLabel,Label TooresNegrasLabel, Label AlfilsNegrasLabel, Label CaballosNegrasLabel ) : base()
         {
             EsBlanca = (fila + columna) % 2 == 0;
             EsNegra = !EsBlanca;
@@ -36,6 +42,11 @@ namespace AjedrezWPF
             torresBlancasLabel = TorresBlancasLabel;
             alfilsBlancasLabel = AlfilsBlancasLabel;
             caballosBlancasLabel = CaballosBlancasLabel;
+            peonesNegrasLabel = PeonesNegrasLabel;
+            torresNegrasLabel = TooresNegrasLabel;
+            alfilsNegrasLabel = AlfilsNegrasLabel;
+            caballosNegrasLabel = CaballosNegrasLabel;
+            
 
 
         }
@@ -44,11 +55,11 @@ namespace AjedrezWPF
         {
             if (EsBlanca)
             {
-                Background = Brushes.White;
+                Background = Brushes.LightGray;
             }
             else
             {
-                Background = Brushes.Black;
+                Background = Brushes.Gray;
             }
         }
 
@@ -62,9 +73,16 @@ namespace AjedrezWPF
 
         public void AgregarPieza(Pieza pieza)
         {
+            string rutaImagen = $"Imgs/{pieza.Nombre}_{pieza.GetColor()}.png";
             Pieza = pieza;
+            Image imagenPieza = new Image
+            {
+                Source = new BitmapImage(new Uri(rutaImagen, UriKind.Relative)),
+                Width = 50,
+                Height = 50
+            };
             HayPieza = true;
-            Content = pieza.Nombre;
+            Content = imagenPieza;
             if (!EsBlanca)
             {
                 Foreground = Brushes.White;
@@ -171,20 +189,41 @@ namespace AjedrezWPF
         //Vamos a definir el método para modifcar los contadores de los labels de las piezas comidas para cada color 
         public void ModicarLabelsPieza()
         {
-            switch (Pieza.Nombre)
+            if (Pieza.EsBlanca)
             {
-                case "Peón":
-                    peonesBlancasLabel.Content = (Convert.ToInt32(peonesBlancasLabel.Content) + 1).ToString();
-                    break;
-                case "Torre":
-                    torresBlancasLabel.Content = Convert.ToInt32(torresBlancasLabel.Content) + 1;
-                    break;
-                case "Alfil":
-                    alfilsBlancasLabel.Content = Convert.ToInt32(alfilsBlancasLabel.Content) + 1;
-                    break;
-                case "Caballo":
-                    caballosBlancasLabel.Content = Convert.ToInt32(caballosBlancasLabel.Content) + 1;
-                    break;
+                switch (Pieza.Nombre)
+                {
+                    case "Peón":
+                        peonesBlancasLabel.Content = (Convert.ToInt32(peonesBlancasLabel.Content) + 1).ToString();
+                        break;
+                    case "Torre":
+                        torresBlancasLabel.Content = (Convert.ToInt32(torresBlancasLabel.Content) + 1).ToString();
+                        break;
+                    case "Alfil":
+                        alfilsBlancasLabel.Content = (Convert.ToInt32(alfilsBlancasLabel.Content) + 1).ToString();
+                        break;
+                    case "Caballo":
+                        caballosBlancasLabel.Content = (Convert.ToInt32(caballosBlancasLabel.Content) + 1).ToString();
+                        break;
+                }
+            }
+            else if (Pieza.EsNegra)
+            {
+                switch (Pieza.Nombre)
+                {
+                    case "Peón":
+                        peonesNegrasLabel.Content = (Convert.ToInt32(peonesNegrasLabel.Content) + 1).ToString();
+                        break;
+                    case "Torre":
+                        torresNegrasLabel.Content = (Convert.ToInt32(torresNegrasLabel.Content) + 1).ToString();
+                        break;
+                    case "Alfil":
+                        alfilsNegrasLabel.Content = (Convert.ToInt32(alfilsNegrasLabel.Content) + 1).ToString();
+                        break;
+                    case "Caballo":
+                        caballosNegrasLabel.Content = (Convert.ToInt32(caballosNegrasLabel.Content) + 1).ToString();
+                        break;
+                }
             }
         }
 

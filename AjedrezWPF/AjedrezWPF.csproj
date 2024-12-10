@@ -8,4 +8,61 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Imgs\Alfil_Blanca.png" />
+    <None Remove="Imgs\Alfil_Negra.png" />
+    <None Remove="Imgs\Caballo_Blanca.png" />
+    <None Remove="Imgs\Caballo_Negra.png" />
+    <None Remove="Imgs\Peón_Blanca.png" />
+    <None Remove="Imgs\Peón_Negra.png" />
+    <None Remove="Imgs\Reina_Blanca.png" />
+    <None Remove="Imgs\Reina_Negra.png" />
+    <None Remove="Imgs\Rey_Blanca.png" />
+    <None Remove="Imgs\Rey_Negra.png" />
+    <None Remove="Imgs\Torre_Blanca.png" />
+    <None Remove="Imgs\Torre_Negra.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imgs\Alfil_Blanca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Caballo_Blanca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Peón_Blanca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Reina_Blanca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Rey_Blanca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Torre_Blanca.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Torre_Negra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imgs\Alfil_Negra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Caballo_Negra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Peón_Negra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Reina_Negra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imgs\Rey_Negra.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>
