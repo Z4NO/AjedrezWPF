@@ -40,7 +40,7 @@ namespace AjedrezWPF
             GridTablero.Children.Add(tableroGrid);
         }
 
-        private void GenerarTablero()
+        public void GenerarTablero()
         {
             // Crear filas y columnas en el Grid
             for (int i = 0; i < filas; i++)
